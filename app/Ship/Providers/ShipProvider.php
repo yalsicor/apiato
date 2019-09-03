@@ -17,14 +17,18 @@ class ShipProvider extends MainProvider
      *
      * @var array
      */
-    public $serviceProviders = [];
+    public $serviceProviders = [
+        \Lanin\Laravel\ApiDebugger\ServiceProvider::class,
+    ];
 
     /**
      * Register any Alias on the Ship layer (including third party packages).
      *
      * @var  array
      */
-    protected $aliases = [];
+    protected $aliases = [
+        'Debugger' => \Lanin\Laravel\ApiDebugger\Facade::class,
+    ];
 
 
     public function __construct()
